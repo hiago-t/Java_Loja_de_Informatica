@@ -1,0 +1,1 @@
+Todas as pastas podem ser importadas, respeitando o nome da pasta que é o nome da Classe.
