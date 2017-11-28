@@ -37,10 +37,15 @@ Pular etapa de add e fazer o commit direto:
 $ git -a -m "mensagem de commit"
 ```
 
+Enviar para o repositório compartilhado:
+```bash
+$ git push origin master
+```
+
 # Links úteis:
 
 ## Playlist de referência sobre GIT Youtube canal rbtech. [1 - 8]
-      *[1º Assunto](https://www.youtube.com/watch?v=WVLhm1AMeYE&list=PLInBAd9OZCzzHBJjLFZzRl6DgUmOeG3H0&index=1)
+* [1º Assunto](https://www.youtube.com/watch?v=WVLhm1AMeYE&list=PLInBAd9OZCzzHBJjLFZzRl6DgUmOeG3H0&index=1)
 * [Tutorial inicial do próprio github:](https://guides.github.com/activities/hello-world/)
 * [Mais um guia de referência Git:](http://rogerdudler.github.io/git-guide/index.pt_BR.html)
 * [Download do GIT](git-scm.com) - Git --distributed-is-the-new-centralized
