@@ -34,12 +34,17 @@ $ git commit -m "Base inicial de arquivos"
 
 Pular etapa de add e fazer o commit direto:
 ```bash
-$ git -a -m "mensagem de commit"
+$ git commit -a -m "mensagem de commit"
 ```
 
 Enviar para o repositório compartilhado:
 ```bash
 $ git push origin master
+```
+
+Atualizar repositório local quando for alterado ao mesmo tempo
+```bash
+$ git pull origin master #Efetua "merge" automático
 ```
 
 # Links úteis:
