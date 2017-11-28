@@ -1,0 +1,9 @@
+HDD
+Memoria RAM
+Gabinete
+Placa de Video
+Teclado
+Mouse
+Processador AMD
+Processador Intel
+
