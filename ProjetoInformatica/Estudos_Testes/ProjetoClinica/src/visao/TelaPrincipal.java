@@ -80,6 +80,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonCadastroVendedor.setBounds(50, 50, 100, 23);
 
         jButtonCadastroProduto.setText("Produto");
+        jButtonCadastroProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroProdutoActionPerformed(evt);
+            }
+        });
         jPanelInternalFrame.add(jButtonCadastroProduto);
         jButtonCadastroProduto.setBounds(180, 50, 90, 23);
 
@@ -197,6 +202,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         FormVendedor tela = new FormVendedor();
         tela.setVisible(true);
     }//GEN-LAST:event_jButtonCadastroVendedorActionPerformed
+
+    private void jButtonCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroProdutoActionPerformed
+        FormProdutos tela = new FormProdutos();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonCadastroProdutoActionPerformed
 
     /**
      * @param args the command line arguments

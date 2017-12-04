@@ -73,6 +73,12 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabelSenha.setBounds(150, 80, 50, 14);
         getContentPane().add(jTextFieldUsuario);
         jTextFieldUsuario.setBounds(200, 30, 140, 30);
+
+        jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldSenhaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPasswordFieldSenha);
         jPasswordFieldSenha.setBounds(200, 70, 140, 30);
 
@@ -98,6 +104,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButtonSairActionPerformed
+
+    private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
     /**
      * @param args the command line arguments
