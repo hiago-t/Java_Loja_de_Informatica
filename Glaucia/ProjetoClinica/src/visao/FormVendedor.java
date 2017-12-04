@@ -66,6 +66,11 @@ public class FormVendedor extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextPaneUsuario);
 
         jButtonNovo.setText("Novo");
+        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoActionPerformed(evt);
+            }
+        });
 
         jButtonSalvar.setText("Salvar");
 
@@ -209,6 +214,10 @@ public class FormVendedor extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(663, 417));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNovoActionPerformed
 
     /**
      * @param args the command line arguments
