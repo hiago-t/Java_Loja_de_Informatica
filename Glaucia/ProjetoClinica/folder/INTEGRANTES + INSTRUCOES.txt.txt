@@ -1,0 +1,25 @@
+Glaucia Silveira Lauton Brito
+Ewerson Sales Xavier 
+Hiago Teodoro Cardoso
+
+------------------------------------------------------------------
+Neste trabalho criamos o sistema de gerenciamento de cadastros e vendas de uma loja de informática.
+
+Utilizamos o IDE NetBeans juntamente do banco de dados PostgreSQL.
+
+------------------------------------------------------------------
+Instruções para Login:
+
+usuario: admin
+senha: 123456780
+
+Abrirá a tela de gereciamento de cadastros.
+
+• Clicando em Vendedor: abrirá uma janela com os dados necessário para realizar o  cadastro de um novo vendedor. 
+Esses dados serão salvos nas colunas + tabelas presentes no banco de dados PostgreSQL. Para salvar as informações digitadas, basta clicar em "Salvar".
+
+• Clicando em Produto: abrirá uma janela com os dados necessário para realizar o  cadastro de um novo produto.
+Esses dados serão salvos nas colunas e tabelas presentes no banco de dados PostgreSQL. Para salvar as informações digitadas, basta clicar em "Salvar".
+
+•Para pesquisar: basta digitar a primeira letra no TextField e aparecerão as opções disponíveis.
+
