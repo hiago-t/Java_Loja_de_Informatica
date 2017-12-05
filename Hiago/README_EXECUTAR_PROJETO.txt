@@ -16,3 +16,14 @@ Para utilizar o banco é necessário:
   => Editar: sudo nano /etc/postgresql/9.4/main/postgresql.conf 
   => Procurar a linha:
        listen_addresses = 'localhost' | substituir 'localhost' por '*'
+
+A classe que exibe a interface gráfica está no pacote: visao e se chama TelaLogin.
+
+Antes de executar o Projeto pode ser necessário adicionar uma biblioteca extra para manipular o Banco de Dados.
+  => Clique com o botão direito do mouse em biblioteca > Importar... > PostgreSQL JDBC Driver.
+
+Após ter restaurado o banco de dados selecione a classe TelaLogin e tecle shift + F6 para executar a aplicação.
+
+Usuário para utilizar como teste no TelaLogin:
+  => u: luxD
+  => s: 123456789
