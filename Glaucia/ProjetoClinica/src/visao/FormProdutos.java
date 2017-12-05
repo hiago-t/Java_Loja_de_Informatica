@@ -6,13 +6,20 @@
 package visao;
 
 import javax.swing.JInternalFrame;
+import Controle.ConexaoBD;
+import modelo.ModeloProdutos;
+import Controle.ControleProdutos;
+import java.text.DecimalFormat;
+
 
 /**
  *
  * @author Glaucia Lauton
  */
 public class FormProdutos extends javax.swing.JFrame {
-
+    ModeloProdutos mod = new ModeloProdutos();
+    ConexaoBD conex = new ConexaoBD();
+    ControleProdutos control = new ControleProdutos();
     /**
      * Creates new form FormProdutos
      */
@@ -36,16 +43,17 @@ public class FormProdutos extends javax.swing.JFrame {
         jButtonEditar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        jTextPane1Nome = new javax.swing.JTextPane();
         jLabelDescrição = new javax.swing.JLabel();
         jLabelPreços = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        jTextPaneDescricao = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
-        jLabel2 = new javax.swing.JLabel();
+        jTextPane3Preco = new javax.swing.JTextPane();
+        jLabel2QtdEstoque = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
+        jTextPaneEstoque = new javax.swing.JTextPane();
+        jButton1Salvar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -64,19 +72,26 @@ public class FormProdutos extends javax.swing.JFrame {
 
         jButtonExcluir.setText("Excluir");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(jTextPane1Nome);
 
         jLabelDescrição.setText("Descrição:");
 
         jLabelPreços.setText("Preço:");
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(jTextPaneDescricao);
 
-        jScrollPane3.setViewportView(jTextPane3);
+        jScrollPane3.setViewportView(jTextPane3Preco);
 
-        jLabel2.setText("Quantidade em Estoque:");
+        jLabel2QtdEstoque.setText("Quantidade em Estoque:");
 
-        jScrollPane4.setViewportView(jTextPane4);
+        jScrollPane4.setViewportView(jTextPaneEstoque);
+
+        jButton1Salvar.setText("Salvar");
+        jButton1Salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1SalvarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,7 +102,8 @@ public class FormProdutos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonNovo))
+                    .addComponent(jButtonNovo)
+                    .addComponent(jButton1Salvar))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -101,7 +117,7 @@ public class FormProdutos extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(jLabel2QtdEstoque)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -126,7 +142,9 @@ public class FormProdutos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2QtdEstoque)
+                                .addComponent(jButton1Salvar))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonEditar)
@@ -157,12 +175,20 @@ public class FormProdutos extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(631, 396));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1SalvarActionPerformed
+        mod.setNome(jTextPane1Nome.getText());
+        mod.setDescricao(jTextPaneDescricao.getText());
+        mod.setPreco(Float.parseFloat(jTextPane3Preco.getText()));
+        mod.setEstoque(Integer.parseInt(jTextPaneEstoque.getText()));
+        control.Salvar(mod);
+    }//GEN-LAST:event_jButton1SalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,11 +226,12 @@ public class FormProdutos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1Salvar;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonNovo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel2QtdEstoque;
     private javax.swing.JLabel jLabelDescrição;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelPreços;
@@ -213,9 +240,9 @@ public class FormProdutos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JTextPane jTextPane1Nome;
+    private javax.swing.JTextPane jTextPane3Preco;
+    private javax.swing.JTextPane jTextPaneDescricao;
+    private javax.swing.JTextPane jTextPaneEstoque;
     // End of variables declaration//GEN-END:variables
 }
