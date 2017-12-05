@@ -5,17 +5,20 @@
  */
 package visao;
 
+import Controle.ConexaoBD;
+
 /**
  *
  * @author Admin
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
+    ConexaoBD conecta = new ConexaoBD();
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
         initComponents();
+        conecta.conexao();
     }
 
     /**
